@@ -3,7 +3,7 @@
 module.exports = {
   url: 'https://lumen.netlify.com',
   pathPrefix: '/',
-  title: 'Blog by John Doe',
+  title: 'Blog by Andronik Mkrtychev',
   subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
   copyright: '© All rights reserved.',
   disqusShortname: '',
@@ -12,8 +12,16 @@ module.exports = {
   useKatex: false,
   menu: [
     {
+      label: 'Projects',
+      path: '/pages/about'
+    },
+    {
       label: 'Articles',
-      path: '/'
+      path: '/pages/about'
+    },
+    {
+      label: 'Blog',
+      path: '/pages/about'
     },
     {
       label: 'About me',
@@ -25,13 +33,13 @@ module.exports = {
     }
   ],
   author: {
-    name: 'John Doe',
-    photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    name: 'Andronik Mkrtychev',
+    photo: '/andronik.jpg',
+    bio: 'Data Scientist.',
     contacts: {
       email: 'andronikmk@gmail.com',
       facebook: '',
-      telegram: '@andronikmk',
+      telegram: 'andronikmk',
       twitter: '',
       github: 'andronikmk',
       rss: '',
