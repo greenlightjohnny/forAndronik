@@ -34,7 +34,7 @@ module.exports = {
   ],
   author: {
     name: 'Andronik Mkrtychev',
-    photo: '../andronik.jpg',
+    photo: '/andronik.jpg',
     bio: 'Data Scientist.',
     contacts: {
       email: 'andronikmk@gmail.com',
