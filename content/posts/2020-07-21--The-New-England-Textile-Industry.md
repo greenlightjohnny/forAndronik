@@ -3,7 +3,7 @@ title: The New England Textile Industry, 1825–60
 date: "2020-01-14"
 template: "post"
 draft: false
-category: "Machine Leaning"
+category: "Data Analysis"
 tags:
   - "Economic History"
   - "Plotly"
