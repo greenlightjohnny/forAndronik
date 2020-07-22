@@ -29,7 +29,7 @@ The image above shows the amount of yards of textile produced per county in the 
 
 Rhode Island-type firms, existed along side the Massachusetts-type in much a much higher number of operations. Rhode Island-type mills were small, often specialized, and tended to produce medium grade cloth. These firms were responsible for a relatively small amount of total textile production from 1825–60 measured in yards. The image below shows the amount of yards of textile produced per county in the New England area.
 
-![rhode-island-type](/media/rhode-island-type.png)
+![rhode-island-type](/media/new-england-textile-industry/rhode-island-type.png)
 
 The distribution of these firms were not wholly geographic. In some cases, the firms of Rhode Island-type were located in Massachusetts as well as Rhode Island Connecticut. Company records for at least some of the Massachusetts-type and Rhode Island-type firms exist for at least some part during the antebellum period.
 
