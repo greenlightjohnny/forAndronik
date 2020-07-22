@@ -42,7 +42,41 @@ The service sector has received much less attention from economic historians tha
 
 While the European dimension of development await further investigation, it is already clear that the relationship between real consumer earnings, GDP per head and annual inflation rate are far more complex than usually appreciated. Patently, for good reason, labor supply per head was anything but constant over time. While exploring the data-set real consumption earnings, determined by income and changes in income, stood out as a feature important enough to explore further using machine learning techniques.
 
-<script src="https://gist.github.com/andronikmk/7fc4e4e6f89bce1969edb02328a781da.js"></script>
+```python
+# imported libraries
+from sklearn.impute import SimpleImputer
+from sklearn.pipeline import make_pipeline
+from sklearn.tree import DecisionTreeRegressor
+
+# target
+target = 'Real_consumption_earnings_Growth_GB'
+
+# drop target feature
+train_features = train.drop(columns=[target,'Growth_consumption_earnings','Consumer_price_inflation'])
+
+# get list of numeric features
+numeric_features = train_features.select_dtypes(include='number').columns.tolist()
+
+# combine numeric features
+features = numeric_features
+
+# Arrange data into X features matrix and y target vector 
+X_train = train[features]
+y_train = train[target]
+X_val = val[features]
+y_val = val[target]
+X_test = test[features]
+
+# pipeline
+pipeline = make_pipeline(
+    SimpleImputer(missing_values=np.nan , strategy='median'),
+    DecisionTreeRegressor(max_depth=2)
+)
+
+# pipeline fit and validtion score
+pipeline.fit(X_train, y_train)
+print('Validation Accuracy', pipeline.score(X_val, y_val))
+```
 
 Real consumption earnings was modeled using a decision tree regressor which breaks down a data-set into smaller and smaller subsets while at the same time an association tree is incrementally developed. This method of analysis resulted in a validation accuracy of 0.641 which suggests that the percentage of correct classifications using this model was approximately 64.1%.
 
@@ -58,6 +92,6 @@ Annual inflation rate experienced volatility post-Black Death and Tudor inflatio
 ### Reference
 
 1. Broadberry, S., Campbell, B., Klein, A., Overton, M., & Van Leeuwen, B. (2015). British Economic Growth, 1270–1870. Cambridge: Cambridge University Press. doi:10.1017/CBO9781107707603
-2. “Sklearn.tree.DecisionTreeRegressor¶.” Scikit, scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html.
+2. “Sklearn.tree.DecisionTreeRegressor.” Scikit, scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html.
 3. “A Millennium of Macroeconomic Data for the UK.” Bank of England, Bank of England, 31 Aug. 2018, www.bankofengland.co.uk/statistics/research-datasets.
 
