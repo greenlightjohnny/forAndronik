@@ -13,7 +13,7 @@ from late 19th centuray New England."
 
 Prior to 1870, industry in the United States was not an integrated whole, but a sum of many heterogeneous parts spread across multiple regions. Attempting to study the economy as a whole is difficult because data is scarce, however, studying important industries in each region during a period of rapid change serves a purpose. Fortunately, rapidly changing industries or those heavily concentrated in specific regions tend to keep business records.
 
-![boston-manufacturing-company](/media/boston-manufacturing-company.jpg)
+![boston-manufacturing-company](/media/boston-main.jpg)
 
 The cotton textile industry provide a fine example of what can be achieved using a regional approach. Cotton textile industry was heavily concentrated in the New England area and growth after 1820 was associated with the rise of a particular set of firms. There were two principal types of cotton textile firms in New England.
 
