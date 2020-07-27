@@ -12,12 +12,12 @@ module.exports = {
   useKatex: false,
   menu: [
     {
-      label: 'Projects',
-      path: '/pages/about'
+      label: 'Articles',
+      path: '/'
     },
     {
-      label: 'Articles',
-      path: '/pages/about'
+      label: 'Projects',
+      path: '/projects'
     },
     {
       label: 'Blog',
