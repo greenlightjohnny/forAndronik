@@ -6,7 +6,7 @@ draft: false
 slug: "a-brief-history-of-typography"
 category: "Design Inspiration"
 tags:
-  - "Linotype"
+  - "Linotype" 
   - "Monotype"
   - "History of typography"
   - "Helvetica"

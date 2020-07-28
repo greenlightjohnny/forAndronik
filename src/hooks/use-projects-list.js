@@ -1,12 +1,12 @@
 // @flow strict
 import { useStaticQuery, graphql } from 'gatsby';
 
-const useCategoriesList = () => {
+const useProjectsList = () => {
   const { allMarkdownRemark } = useStaticQuery(
     graphql`
-      query CategoriesListQuery {
+      query ProjectsListQuery {
         allMarkdownRemark(
-          filter: { frontmatter: { template: { eq: "post" }, draft: { ne: true } } }
+          filter: { frontmatter: { template: { eq: "project" }, draft: { ne: true } } }
         ) {
           group(field: frontmatter___category) {
             fieldValue
@@ -20,4 +20,4 @@ const useCategoriesList = () => {
   return allMarkdownRemark.group;
 };
 
-export default useCategoriesList;
+export default useProjectsList;

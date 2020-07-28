@@ -6,7 +6,7 @@ const siteConfig = require('../../config.js');
 
 module.exports = async (graphql, actions) => {
   const { createPage } = actions;
-  const { postsPerPage } = siteConfig;
+  const { postsPerPage } = siteConfig; 
 
   const result = await graphql(`
     {

@@ -14,6 +14,7 @@ type Props = {
 };
 
 const PageTemplate = ({ data }: Props) => {
+  console.log(data)
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
   const { html: pageBody } = data.markdownRemark;
   const { frontmatter } = data.markdownRemark;

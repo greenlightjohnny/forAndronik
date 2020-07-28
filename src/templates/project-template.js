@@ -7,12 +7,13 @@ import { useSiteMetadata } from '../hooks';
 import type { MarkdownRemark } from '../types';
 
 type Props = {
-  data: {
+  data: { 
     markdownRemark: MarkdownRemark
   }
 };
 
 const ProjectTemplate = ({ data }: Props) => {
+  console.log(data)
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
   const { frontmatter } = data.markdownRemark;
   const { title: projectTitle, description: projectDescription, socialImage } = frontmatter;

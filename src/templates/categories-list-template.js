@@ -22,7 +22,7 @@ const CategoriesListTemplate = () => {
                 {category.fieldValue} ({category.totalCount})
               </Link>
             </li>
-          ))}
+          ))} 
         </ul>
       </Page>
     </Layout>

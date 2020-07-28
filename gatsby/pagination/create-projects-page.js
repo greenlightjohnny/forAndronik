@@ -12,27 +12,26 @@ import type { PageContext, AllMarkdownRemark } from '../types';
 type Props = {
   data: AllMarkdownRemark,
   pageContext: PageContext
-}; 
+};
 
-const CategoryTemplate = ({ data, pageContext }: Props) => {
+const IndexTemplate = ({ data, pageContext }: Props) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
 
   const {
-    category,
     currentPage,
-    prevPagePath,
-    nextPagePath,
-    hasPrevPage,
     hasNextPage,
+    hasPrevPage,
+    prevPagePath,
+    nextPagePath
   } = pageContext;
 
   const { edges } = data.allMarkdownRemark;
-  const pageTitle = currentPage > 0 ? `${category} - Page ${currentPage} - ${siteTitle}` : `${category} - ${siteTitle}`;
+  const pageTitle = currentPage > 0 ? `Posts - Page ${currentPage} - ${siteTitle}` : siteTitle;
 
   return (
     <Layout title={pageTitle} description={siteSubtitle}>
-      <Sidebar />
-      <Page title={category}>
+      <Sidebar isIndex />
+      <Page>
         <Feed edges={edges} />
         <Pagination
           prevPagePath={prevPagePath}
@@ -46,24 +45,24 @@ const CategoryTemplate = ({ data, pageContext }: Props) => {
 };
 
 export const query = graphql`
-  query CategoryPage($category: String, $postsLimit: Int!, $postsOffset: Int!) {
+  query IndexTemplate($postsLimit: Int!, $postsOffset: Int!) {
     allMarkdownRemark(
         limit: $postsLimit,
         skip: $postsOffset,
-        filter: { frontmatter: { category: { eq: $category }, template: { eq: "post" }, draft: { ne: true } } },
+        filter: { frontmatter: { template: { eq: "project" }, draft: { ne: true } } },
         sort: { order: DESC, fields: [frontmatter___date] }
       ){
       edges {
         node {
           fields {
-            categorySlug
             slug
+            categorySlug
           }
           frontmatter {
-            date
-            description
-            category
             title
+            date
+            category
+            description
           }
         }
       }
@@ -71,4 +70,4 @@ export const query = graphql`
   }
 `;
 
-export default CategoryTemplate;
+export default IndexTemplate;

@@ -7,6 +7,7 @@ const onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === 'MarkdownRemark') {
+    console.log("yaaaaaa",node.internal.type)
     if (typeof node.frontmatter.slug !== 'undefined') {
       const dirname = getNode(node.parent).relativeDirectory;
       createNodeField({
@@ -15,7 +16,7 @@ const onCreateNode = ({ node, actions, getNode }) => {
         value: `/${dirname}/${node.frontmatter.slug}`
       });
     } else {
-      const value = createFilePath({ node, getNode });
+      const value = createFilePath({ node, getNode }); 
       createNodeField({
         node,
         name: 'slug',
@@ -32,6 +33,7 @@ const onCreateNode = ({ node, actions, getNode }) => {
       const categorySlug = `/category/${_.kebabCase(node.frontmatter.category)}/`;
       createNodeField({ node, name: 'categorySlug', value: categorySlug });
     }
+   
   }
 };
 
