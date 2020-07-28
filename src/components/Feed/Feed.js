@@ -5,9 +5,9 @@ import { Link } from "gatsby";
 import type { Edges } from "../../types";
 import styles from "./Feed.module.scss";
 
-// type Props = {
-//   edges: Edges,
-// };
+type Props = {
+  edges: Edges,
+};
 
 const Feed = ({ edges }: Props) => (
   <div className={styles["feed"]}>
